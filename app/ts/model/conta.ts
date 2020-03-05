@@ -1,7 +1,7 @@
 class Conta {
 
-    _numero;
-    _saldo;
+    private _numero;
+    private _saldo;
 
     constructor(numero, saldo=0) {
         this._numero = numero;
