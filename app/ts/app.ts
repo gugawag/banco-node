@@ -1,4 +1,5 @@
-let c1 = new Conta('123', 100);
-let valorDigitado = prompt('Digite o valor a ser creditado:');
-c1.creditar(valorDigitado);
-console.log(c1.saldo);
+let contaController = new ContaController();
+
+document.querySelector(".form")
+    .addEventListener("submit",
+        contaController.inserir.bind(contaController));
