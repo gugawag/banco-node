@@ -3,7 +3,7 @@ class Conta {
     private _numero: string;
     private _saldo: number;
 
-    constructor(numero: string, saldo=0) {
+    constructor(numero: string, saldo = 0) {
         this._numero = numero;
         this._saldo = saldo;
     }
@@ -20,14 +20,14 @@ class Conta {
         return this._saldo;
     }
 
-    debitar(valor: number):void {
+    debitar(valor: number): void {
         //apenas debita se houver saldo
         if (valor < this._saldo) {
             this._saldo -= valor;
         }
     }
 
-    creditar(valor: number):void {
+    creditar(valor: number): void {
         this._saldo += valor;
     }
 
