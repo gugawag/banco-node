@@ -21,4 +21,8 @@ class Conta {
     creditar(valor) {
         this._saldo += valor;
     }
+    toString() {
+        return `Número: ${this._numero} 
+        - Saldo: ${this._saldo}`;
+    }
 }

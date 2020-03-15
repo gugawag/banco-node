@@ -12,22 +12,21 @@ class ContaController {
         this.contas.inserir(novaConta);
         this.inserirContaNoHTML(novaConta);
     }
-    remover(event) {
-        this.contas.remover(event.target.id);
-        event.target.parentElement.remove();
-    }
     listar() {
         this.contas.listar().forEach(conta => {
             this.inserirContaNoHTML(conta);
         });
     }
     inserirContaNoHTML(conta) {
-        const elementoP = document.createElement("p");
-        elementoP.textContent = `${conta.numero} - ${conta.saldo}`;
-        const botaoApagar = document.createElement("button");
-        botaoApagar.id = conta.numero;
+        const elementoP = document.createElement('p');
+        elementoP.textContent = conta.toString();
+        const botaoApagar = document.createElement('button');
         botaoApagar.textContent = 'X';
-        botaoApagar.onclick = this.remover.bind(this);
+        botaoApagar.addEventListener('click', (event) => {
+            console.log('removendo conta ' + conta.toString());
+            this.contas.remover(conta.numero);
+            event.target.parentElement.remove();
+        });
         elementoP.appendChild(botaoApagar);
         document.body.appendChild(elementoP);
     }

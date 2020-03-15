@@ -1,11 +1,15 @@
 let contaController = new ContaController();
+
 contaController.listar();
 
-const p = new Poupanca('1', 200, new Date('2020-03-20'));
-console.log(p);
-console.log(p.saldo);
-p.debitar(50);
-console.log(p.saldo);
+const c1 = new Conta('1', 100);
+const p1 = new Poupanca('2', 100);
+const cb1 = new ContaBonificada('3', 0);
 
-p.atualizarSaldoAniversario();
-console.log(p.saldo);
+console.log('Conta: ' + c1.saldo);
+
+p1.atualizarSaldoAniversario();
+console.log('Poupanca: ' + p1.saldo);
+
+cb1.creditar(100);
+console.log('Conta Bonificada: ' + cb1.saldo);

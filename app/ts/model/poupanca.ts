@@ -1,22 +1,24 @@
-class Poupanca extends Conta {
-    private _dataVencimento: Date;
+class Poupanca extends Conta{
 
-    constructor(numero: string, saldo: number, dataVencimento: Date) {
+    private _dataAniversario: Date;
+
+    constructor(numero: string, saldo: number) {
         super(numero, saldo);
-        this._dataVencimento = dataVencimento;
+        this._dataAniversario = new Date();
     }
 
-    get dataVencimento() {
-        return this._dataVencimento;
+    get dataAniversario(): Date {
+        return this._dataAniversario;
     }
 
-    set dataVencimento(novaDataVencimento: Date) {
-        this._dataVencimento = novaDataVencimento;
+    set dataAniversario(value: Date) {
+        this._dataAniversario = value;
     }
 
-    atualizarSaldoAniversario() {
-        if (this._dataVencimento.getDay() === (new Date()).getDay()) {
-            this.creditar(this.saldo * 0.10);
+    atualizarSaldoAniversario(){
+        const hoje = new Date();
+        if (hoje.getDay() === this.dataAniversario.getDay()) {
+            this.creditar(this.saldo * 0.02);
         }
     }
 }

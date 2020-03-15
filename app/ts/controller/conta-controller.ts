@@ -2,6 +2,7 @@ class ContaController {
 
     private inputNumero: HTMLInputElement;
     private inputSaldo: HTMLInputElement;
+
     private contas: Contas;
 
     constructor() {
@@ -9,7 +10,6 @@ class ContaController {
             <HTMLInputElement>document.querySelector("#conta")
         this.inputSaldo =
             <HTMLInputElement>document.querySelector("#saldo");
-
         this.contas = new Contas();
     }
 
@@ -22,26 +22,29 @@ class ContaController {
         this.inserirContaNoHTML(novaConta);
     }
 
-    remover(event: Event): void {
-        this.contas.remover((<Element>event.target).id);
-        (<Element>event.target).parentElement.remove();
-    }
-
     listar() {
-        this.contas.listar().forEach(conta => {
-            this.inserirContaNoHTML(conta);
-        });
+        this.contas.listar().forEach(
+            conta => {
+                this.inserirContaNoHTML(conta);
+            }
+        );
     }
 
     inserirContaNoHTML(conta: Conta) {
-        const elementoP = document.createElement("p");
-        elementoP.textContent = `${conta.numero} - ${conta.saldo}`;
-        const botaoApagar = document.createElement("button");
-        botaoApagar.id = conta.numero;
+        const elementoP = document.createElement('p');
+        elementoP.textContent = conta.toString();
+        const botaoApagar = document.createElement('button');
         botaoApagar.textContent = 'X';
-        botaoApagar.onclick = this.remover.bind(this);
+        botaoApagar.addEventListener('click',
+            (event) => {
+                console.log('removendo conta ' + conta.toString());
+                this.contas.remover(conta.numero);
+                (<Element>event.target).parentElement.remove();
+            }
+            );
         elementoP.appendChild(botaoApagar);
         document.body.appendChild(elementoP);
     }
+
 
 }
