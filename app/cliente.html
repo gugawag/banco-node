@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="text-center">Cadastrar Clientes</h1>
+
+    <div id="mensagemView"></div>
+    
+    <form class="form">
+    
+        <div class="form-group">
+            <label for="text">Nome</label>
+            <input type="text" id="nome" class="form-control" required autofocus/>
+        </div>
+    
+        <div class="form-group">
+            <label for="cpf">CPF</label>
+            <input type="text" id="cpf" class="form-control" required/>
+        </div>
+
+        <div class="form-group">
+            <label for="conta">Conta</label>
+            <input type="text" id="conta" class="form-control" required/>
+        </div>
+    
+        <button class="btn btn-primary" type="submit" onclick="clienteController.inserir(event)">Inserir</button>
+    </form>
+     
+    <br>
+    <br>
+    
+    <table>
+        <thead>
+        <tr>
+            <th>CLIENTES CADASTRADOS</th>
+        </tr>
+        </thead>
+    
+        <tbody>
+        </tbody>
+    
+        <tfoot>
+        </tfoot>
+    </table>
+
+<script src="js/model/cliente.js"></script>
+<script src="js/model/clientes.js"></script>
+<script src="js/controller/cliente-controller.js"></script>
+
+</body>
+</html>
