@@ -1,8 +1,8 @@
 class Clientes {
     constructor() {
         this.clientes = new Array();
-        const cli_1 = new Cliente('Fulano', '10011122233', c1.numero);
-        const cli_2 = new Cliente('Cicrano', '20011122230', c2.numero);
+        const cli_1 = new Cliente('Fulano', '10011122233', '1');
+        const cli_2 = new Cliente('Cicrano', '20011122230', '2');
         this.clientes.push(cli_1, cli_2);
     }
     inserir(cliente) {

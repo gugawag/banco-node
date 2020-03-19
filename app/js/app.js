@@ -9,8 +9,3 @@ p1.atualizarSaldoAniversario();
 console.log('Poupanca: ' + p1.saldo);
 cb1.creditar(100);
 console.log('Conta Bonificada: ' + cb1.saldo);
-const cli_1 = new Cliente('Fulano', '10011122233', c1.numero);
-const cli_2 = new Cliente('Cicrano', '20011122230', c2.numero);
-console.log(cli_1.toString());
-let clientes = new Clientes();
-console.log(clientes.listar());

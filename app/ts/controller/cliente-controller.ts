@@ -16,7 +16,7 @@ class ClienteController {
         this.clientes = new Clientes();
     }
 
-    inserir(evento: Event) {
+    inserirCliente(evento: Event) {
         evento.preventDefault();
         let novoCliente = new Cliente(this.inputNome.value,
             this.inputCpf.value,this.inputConta.value);
@@ -34,8 +34,8 @@ class ClienteController {
     }
 
     inserirClienteNoHTML(cliente: Cliente) {
-        const elementoP = document.createElement('p');
-        elementoP.textContent = cliente.toString();
+        const elementop = document.createElement('p');
+        elementop.textContent = cliente.toString();
         const botaoApagar = document.createElement('button');
         botaoApagar.textContent = 'X';
         botaoApagar.addEventListener('click',
@@ -45,8 +45,8 @@ class ClienteController {
                 (<Element>event.target).parentElement.remove();
             }
             );
-        elementoP.appendChild(botaoApagar);
-        document.body.appendChild(elementoP);
+        elementop.appendChild(botaoApagar);
+        document.body.appendChild(elementop);
     }
 
 

@@ -8,7 +8,7 @@ class ClienteController {
             document.querySelector("#conta");
         this.clientes = new Clientes();
     }
-    inserir(evento) {
+    inserirCliente(evento) {
         evento.preventDefault();
         let novoCliente = new Cliente(this.inputNome.value, this.inputCpf.value, this.inputConta.value);
         this.clientes.inserir(novoCliente);
@@ -20,8 +20,8 @@ class ClienteController {
         });
     }
     inserirClienteNoHTML(cliente) {
-        const elementoP = document.createElement('p');
-        elementoP.textContent = cliente.toString();
+        const elementop = document.createElement('p');
+        elementop.textContent = cliente.toString();
         const botaoApagar = document.createElement('button');
         botaoApagar.textContent = 'X';
         botaoApagar.addEventListener('click', (event) => {
@@ -29,7 +29,7 @@ class ClienteController {
             this.clientes.remover(cliente.cpf);
             event.target.parentElement.remove();
         });
-        elementoP.appendChild(botaoApagar);
-        document.body.appendChild(elementoP);
+        elementop.appendChild(botaoApagar);
+        document.body.appendChild(elementop);
     }
 }
